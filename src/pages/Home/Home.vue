@@ -1,57 +1,59 @@
 <template>
     <div>
-        <header>
-            <a href="/home" id="logo"></a>
-            <div class="topSearchIpt">
-                <i class="icon"></i>
-                <span class="placeholder">搜索商品, 共19918款好物</span>
-            </div>
-            <div class="loginBtn">登录</div>
-        </header>
-        <div class="tabWrap">
-            <div class="m-tabs">
-                <div class="header">
-                    <div class="inner" style="position:relative;height:100%;width:100%;overflow:hidden;">
-                        <div class="list" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
-                            <div class="tab active"><span class="txt">推荐</span>
-                            </div>
-                            <div class="tab"> <span class="txt">居家</span>
-                            </div>
-                            <div class="tab"><span class="txt">鞋包配饰</span>
+        <div class="HomeHeader">
+            <header>
+                <a href="/home" id="logo"></a>
+                <div class="topSearchIpt">
+                    <i class="icon"></i>
+                    <span class="placeholder">搜索商品, 共19918款好物</span>
+                </div>
+                <div class="loginBtn">登录</div>
+            </header>
+            <div class="tabWrap">
+                <div class="m-tabs">
+                    <div class="header">
+                        <div class="inner">
+                            <div class="list">
+                                <div class="tab active"><span class="txt">推荐</span>
+                                </div>
+                                <div class="tab"> <span class="txt">居家</span>
+                                </div>
+                                <div class="tab"><span class="txt">鞋包配饰</span>
 
-                            </div>
-                            <div class="tab"> <span class="txt">服装</span>
+                                </div>
+                                <div class="tab"> <span class="txt">服装</span>
 
-                            </div>
-                            <div class="tab"> <span class="txt">电器</span>
+                                </div>
+                                <div class="tab"> <span class="txt">电器</span>
 
-                            </div>
-                            <div class="tab"> <span class="txt">洗护</span>
+                                </div>
+                                <div class="tab"> <span class="txt">洗护</span>
 
-                            </div>
-                            <div class="tab"> <span class="txt">饮食</span>
+                                </div>
+                                <div class="tab"> <span class="txt">饮食</span>
 
-                            </div>
-                            <div class="tab"> <span class="txt">餐厨</span>
+                                </div>
+                                <div class="tab"> <span class="txt">餐厨</span>
 
-                            </div>
-                            <div class="tab"> <span class="txt">婴童</span>
+                                </div>
+                                <div class="tab"> <span class="txt">婴童</span>
 
-                            </div>
-                            <div class="tab"> <span class="txt">文体</span>
+                                </div>
+                                <div class="tab"> <span class="txt">文体</span>
 
-                            </div>
-                            <div class="tab"> <span class="txt">特色区</span>
+                                </div>
+                                <div class="tab"> <span class="txt">特色区</span>
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="toggleWrap">
-                <div class="linear"></div>
-                <div class="toggle">
-                    <div class="icon"></div>
+                <div class="toggleWrap">
+                    <div class="linear"></div>
+                    <div class="toggle">
+                        <div class="icon"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,39 +63,38 @@
                     <div class="swiper-container common-swiper-container swiper-container-horizontal">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide swiper-slide-duplicate" id="7">
-                                <img src="https://yanxuan.nosdn.127.net/850c005113e5becbfd98d797b8a2101a.jpg?imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/8.jpg">
                             </div>
                             <div class="swiper-slide swiper-slide-prev" id="0"style="width: 750px;">
-                                <img src="https://yanxuan.nosdn.127.net/1d66a50452354fa28b045853c078cbe3.jpg?imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/1.jpg">
                             </div>
                             <div class="swiper-slide swiper-slide-active" id="1">
-                                <img src="https://yanxuan.nosdn.127.net/fda101d5e6beeb56d0ff8245139ff30b.jpg?imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/2.jpg">
                             </div>
                             <div class="swiper-slide swiper-slide-next" id="2">
-                                <img src="https://yanxuan.nosdn.127.net/e0c3e253dcfdb170bda823ac5b71247e.jpg?imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/3.jpg">
                             </div>
                             <div class="swiper-slide" id="3">
-                                <img src="https://yanxuan.nosdn.127.net/03d8a81e7be4bb1a8d44dc2118f944a4.jpg?imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/4.jpg">
                             </div>
                             <div class="swiper-slide" id="4">
-                                <img src="https://yanxuan.nosdn.127.net/089fdc9bfdc75ccfbe9c349d0096804b.jpg?watermark&type=1&gravity=northwest&dx=0&dy=0&image=YTRhMmIzYmI1Y2I1YTc4ZGM5MmE3Nzk2NzAwYTFiNjgucG5n|imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/5.jpg">
                             </div>
                             <div class="swiper-slide" id="5">
-                                <img src="https://yanxuan.nosdn.127.net/a209d8ec4efb502140d086773cd04c76.jpg?watermark&type=1&gravity=northwest&dx=0&dy=0&image=YTRhMmIzYmI1Y2I1YTc4ZGM5MmE3Nzk2NzAwYTFiNjgucG5n|imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/6.jpg">
                             </div>
                             <div class="swiper-slide" id="6">
-                                <img src="https://yanxuan.nosdn.127.net/5a2289149a59ca24ef2256674542e4cb.jpg?imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/7.jpg">
                             </div>
                             <div class="swiper-slide" id="7">
-                                <img src="https://yanxuan.nosdn.127.net/850c005113e5becbfd98d797b8a2101a.jpg?imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/8.jpg">
                             </div>
                             <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" id="0">
-                                <img src="https://yanxuan.nosdn.127.net/1d66a50452354fa28b045853c078cbe3.jpg?imageView&quality=75&thumbnail=750x0">
+                                <img src="./images/1.jpg">
                             </div>
                         </div>
                         <div class="swiper-pagination common-swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
                             <span class="swiper-pagination-bullet"></span>
-                            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
                             <span class="swiper-pagination-bullet"></span>
                             <span class="swiper-pagination-bullet"></span>
                             <span class="swiper-pagination-bullet"></span>
@@ -127,67 +128,67 @@
                 </li>
             </ul>
         </div>
-        <div>
+        <div style="background-color:#F4F4F4">
             <div class="m-kingKongModule" style="background-image:url(http://yanxuan.nosdn.127.net/56cd3b1e32f4d2edd03915efcef04de0.png);background-size:100% 100%;">
                 <div class="m-carousel kingkongCarousel" >
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a class="kingkong-item mb-9" href="http://m.you.163.com/item/list?categoryId=1005000&style=pd">
+                                <a class="kingkong-item mb-9" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/98b6a6fc32f1fea861934816729e2cf5.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">居家</div>
                                 </a>
-                                <a class="kingkong-item mb-9" href="http://m.you.163.com/item/list?categoryId=1008000&style=pd">
+                                <a class="kingkong-item mb-9" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/46d33b9a9fbb659fcbac37ec58d51e62.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">鞋包配饰</div>
                                 </a>
-                                <a class="kingkong-item mb-9" href="http://m.you.163.com/item/list?categoryId=1010000&style=pd">
+                                <a class="kingkong-item mb-9" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/31831ada59dc10319cba195620ed9ed0.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">服装</div>
                                 </a>
-                                <a class="kingkong-item mb-9" href="http://m.you.163.com/item/list?categoryId=1043000&style=pd">
+                                <a class="kingkong-item mb-9" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/45833c71d4b0d0de0755a20f893fa25f.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">电器</div>
                                 </a>
-                                <a class="kingkong-item mb-9" href="http://m.you.163.com/item/list?categoryId=1011000&style=pd">
+                                <a class="kingkong-item mb-9" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/2fde77529e90a26427d1c02faa3bfbf6.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">婴童</div>
                                 </a>
-                                <a class="kingkong-item" href="http://m.you.163.com/item/list?categoryId=1005002&style=pd">
+                                <a class="kingkong-item" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/15e364ca93313bbd6e87dfcba7ae7b74.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">饮食</div>
                                 </a>
-                                <a class="kingkong-item" href="http://m.you.163.com/item/list?categoryId=1013001&style=pd">
+                                <a class="kingkong-item" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/793bca13bb931475ea7f0c00299362bb.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">洗护</div>
                                 </a>
-                                <a class="kingkong-item" href="http://m.you.163.com/item/list?categoryId=1005001&style=pd">
+                                <a class="kingkong-item" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/fc3e359da08577228354da61ea912c99.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">餐厨</div>
                                 </a>
-                                <a class="kingkong-item" href="http://m.you.163.com/item/list?categoryId=1019000&style=pd">
+                                <a class="kingkong-item" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/97eb6fd2c7ea76a3a42b9dafa3bd6543.png">
                                     </div>
                                     <div class="txt" style="color:#333333;">文体</div>
                                 </a>
-                                <a class="kingkong-item" href="https://act.you.163.com/act/pub/6kyfPjwjEz.html">
+                                <a class="kingkong-item" >
                                     <div class="icon">
                                         <img class="img" src="http://yanxuan.nosdn.127.net/db5e2ce8c66f7db3f4282ecb24a64236.png">
                                     </div>
@@ -254,43 +255,67 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="m-indexManufacturersSupplying">
+            <div class="m-indexManufacturersSupplying">
                 <div class="moduleTitle">
                     <div class="left">品牌制造商直供</span>
-                    </div><a class="right" href="/manufacturer/list"></i></a>
+                    </div>
+                    <a class="right" href="/manufacturer/list">
+                        <span>更多</span>
+                        <i class="icon u-icon u-icon-index-titleArrow"></i>
+                    </a>
                 </div>
                 <ul class="list">
-                    <a class="item" href="/item/manufacturer?tagId=1080000&page=1&size=100" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
+                    <a class="item" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
                         <div class="cnt">
                             <h4 class="title">海外制造商</h4>
-                            <div>上新</i>
+                            <div>
+                                <span class="price">
+                                    <span>9.9</span>
+                                    <span>元起</span>
+                                </span>
+                                <i class="newIcon">上新</i>
                             </div>
                         </div>
                     </a>
-                    <a class="item" href="/item/manufacturer?tagId=1026000&page=1&size=100" style="background-image:url(http://yanxuan.nosdn.127.net/c1e97be1b9730360c9c228b6a6448bca.png?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
+                    <a class="item" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
                         <div class="cnt">
-                            <h4 class="title">CK制造商</h4>
-                            <div>元起</span></span>
+                            <h4 class="title">海外制造商</h4>
+                            <div>
+                                <span class="price">
+                                    <span>9.9</span>
+                                    <span>元起</span>
+                                </span>
+                                <i class="newIcon">上新</i>
                             </div>
                         </div>
                     </a>
-                    <a class="item" href="/item/manufacturer?tagId=1001037&page=1&size=100" style="background-image:url(http://yanxuan.nosdn.127.net/e550a44d2a7a68ed38e6cfd380e514aa.png?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
+                    <a class="item" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
                         <div class="cnt">
-                            <h4 class="title">新秀丽制造商</h4>
-                            <div>元起</span></span>
+                            <h4 class="title">海外制造商</h4>
+                            <div>
+                                <span class="price">
+                                    <span>9.9</span>
+                                    <span>元起</span>
+                                </span>
+                                <i class="newIcon">上新</i>
                             </div>
                         </div>
                     </a>
-                    <a class="item" href="/item/manufacturer?tagId=1001000&page=1&size=100" style="background-image:url(http://yanxuan.nosdn.127.net/053ecfefd033a9acd2cb95483e14fcb6.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
+                    <a class="item" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
                         <div class="cnt">
-                            <h4 class="title">MUJI制造商</h4>
-                            <div>元起</span></span>
+                            <h4 class="title">海外制造商</h4>
+                            <div>
+                                <span class="price">
+                                    <span>9.9</span>
+                                    <span>元起</span>
+                                </span>
+                                <i class="newIcon">上新</i>
                             </div>
                         </div>
                     </a>
                 </ul>
             </div>
-            <div class="m-categoryHotSellModule m-indexFloor">
+            <!-- <div class="m-categoryHotSellModule m-indexFloor">
                 <div class="moduleTitle">
                     <div class="left">类目热销榜</span>
                     </div>
@@ -399,15 +424,58 @@
                 </div>
             </div> -->
         </div>
-        
     </div>
 </template>
 
 <script>
-export default {};
+import BScroll from "better-scroll";
+import Swiper from 'swiper';
+export default {
+  mounted() {
+    new BScroll(".inner", {
+      click: true,
+      scrollX: true
+    });
+    
+    new Swiper(".swiper-container-horizontal",{
+        autoplay:true,
+        loop:true,
+        pagination:{
+            el:'.swiper-pagination-clickable',
+            // type: 'custom',
+			// renderCustom: function(swiper, current, total) {
+			// 	var customPaginationHtml = "";
+			// 	for(var i = 0; i < total; i++) {
+			// 		//判断哪个分页器此刻应该被激活
+			// 		if(i == (current - 1)) {
+			// 			customPaginationHtml += '<span class="swiper-pagination-customs swiper-pagination-customs-active"></span>';
+			// 		} else {
+			// 			customPaginationHtml += '<span class="swiper-pagination-customs"></span>';
+			// 		}
+			// 	}
+			// 	return customPaginationHtml;
+			// }
+        },
+    });
+  }
+};
 </script>
 
 <style lang="stylus" scoped>
+@import '../../commons/mixins.styl';
+
+body{
+    background-color:red;
+}
+
+.HomeHeader{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:10000;
+    width:100%;
+    height:1.47rem;
+}
 
 header {
     width: 100%;
@@ -477,7 +545,7 @@ header {
         width: 100%;
         height: 100%;
         box-sizing: border-box;
-        padding-right: 1.33333rem;
+        padding-right: 1rem;
 
         .header {
             display: flex;
@@ -489,15 +557,15 @@ header {
             .inner {
                 height: 100%;
                 position: relative;
-                height: 100%;
                 width: 100%;
+                display: flex;
                 overflow: hidden;
 
                 .list {
                     display: flex;
-                    height: 100%;
                     flex-flow: row nowrap;
                     flex-shrink: 0;
+                    height: 100%;
                     padding: 0 0.3rem;
                     background: #fff;
 
@@ -511,13 +579,12 @@ header {
                         flex-flow: row nowrap;
                         align-items: center;
                         justify-content: center;
-                        position: relative;
                         z-index: 1;
                         text-align: center;
 
                         .txt {
                             display: inline-block;
-                            line-height: 0.8rem;
+                            line-height: 0.6rem;
                             font-size: 0.28rem;
                             color: #333;
                             text-align: center;
@@ -592,6 +659,7 @@ header {
 .slideWarp {
     height: 3.7rem;
     position: relative;
+    margin-top:1.47rem;
 
     .m-indexSlide {
         padding-top: 3.7rem !important;
@@ -649,7 +717,8 @@ header {
             }
 
             &.swiper-container-horizontal {
-                >.swiper-pagination {
+                >.swiper-pagination-clickable {
+                    display:inline-block;
                     height: 0.04rem;
                     position: absolute;
                     bottom: 0.3rem;
@@ -657,23 +726,8 @@ header {
                     text-align: center;
                     transition: 0.3s;
                     transform: translate3d(0, 0, 0);
-                    z-index: 10;
+                    z-index: 100;
                     font-size: 0rem;
-
-                    .swiper-pagination-bullet {
-                        margin: 0 0.1rem 0 0;
-                        cursor: pointer;
-                        width: 0.4rem;
-                        height: 0.05rem;
-                        display: inline-block;
-                        background: #fff;
-                        opacity: 0.4;
-                        border-radius: 0;
-                    }
-
-                    .swiper-pagination-bullet-active {
-                        opacity: 0.7;
-                    }
                 }
 
                 >.swiper-pagination-bullets {
@@ -720,7 +774,7 @@ header {
                     font-style: normal;
                 }
 
-                .text{
+                .text {
                     color: #B4282D;
                     font-size: 0.24rem;
                     margin-left: 0.08rem;
@@ -733,52 +787,61 @@ header {
     }
 }
 
-.m-kingKongModule{
+.m-kingKongModule {
     background-image: url('http://yanxuan.nosdn.127.net/56cd3b1….png');
     background-size: 100% 100%;
     width: 100%;
     height: 3.92rem;
-    .m-carousel{
+
+    .m-carousel {
         background: 0 0;
         position: relative;
-        .swiper-container{
+
+        .swiper-container {
             padding-bottom: 0.52rem;
             margin-left: auto;
             margin-right: auto;
             position: relative;
             overflow: hidden;
             z-index: 1;
-            .swiper-wrapper{
+
+            .swiper-wrapper {
                 height: auto;
                 position: relative;
                 width: 100%;
                 z-index: 1;
                 display: flex;
                 box-sizing: content-box;
-                .swiper-slide{
+
+                .swiper-slide {
                     height: auto;
                     flex-shrink: 0;
                     width: 100%;
                     position: relative;
-                    .mb-9{
-                        margin-bottom: .12rem;
+
+                    .mb-9 {
+                        margin-bottom: 0.12rem;
                     }
-                    .kingkong-item{
+
+                    .kingkong-item {
                         display: block;
                         width: 1.1rem;
                         height: 1.56rem;
                         float: left;
                         margin: 0.1rem 0.2rem 0.09rem;
-                        .icon{
+
+                        .icon {
                             width: 1.1rem;
                             height: 1.1rem;
-                            img{
+
+                            img {
                                 width: 1.1rem;
                                 height: 1.1rem;
                                 display: block;
                             }
                         }
-                        .txt{
+
+                        .txt {
                             color: #333333;
                             margin-top: 0.1rem;
                             text-align: center;
@@ -793,33 +856,38 @@ header {
     }
 }
 
-.m-indexFloor{
+.m-indexFloor {
     background-color: #fff;
-    margin-bottom: 0.2rem;
-    &.m-freshmanModule{
+
+    &.m-freshmanModule {
         background: #fff;
         margin-top: 0.2rem;
         padding-bottom: 0.3rem;
-        .moduleTitle{
+
+        .moduleTitle {
             height: 0.9rem;
             width: 100%;
             line-height: 0.9rem;
             text-align: center;
             font-family: PingFangSC-Regular;
             font-size: 0.32rem;
-            padding: 0 .4rem;
+            padding: 0 0.4rem;
             background: #fff;
             overflow: hidden;
-            .txt{
+
+            .txt {
                 display: inline-block;
                 position: relative;
-                &::before{
-                    left:-0.4rem;
+
+                &::before {
+                    left: -0.4rem;
                 }
-                &::after{
-                    right:-0.4rem;
+
+                &::after {
+                    right: -0.4rem;
                 }
-                &::before,&::after{
+
+                &::before, &::after {
                     content: '';
                     position: absolute;
                     top: 0.45rem;
@@ -829,10 +897,12 @@ header {
                 }
             }
         }
-        .content{
+
+        .content {
             padding-left: 0.3rem;
             overflow: hidden;
-            .left{
+
+            .left {
                 display: block;
                 width: 3.43rem;
                 height: 4.34rem;
@@ -841,26 +911,31 @@ header {
                 margin-right: 0.04rem;
                 float: left;
                 color: #333;
-                .name{
+
+                .name {
                     font-family: PingFangSC-Medium;
                     font-size: 0.32rem;
                     padding: 0.3rem 0 0 0.3rem;
                 }
-                .imgWrap{
+
+                .imgWrap {
                     margin: 0.5rem auto;
                     width: 2.28rem;
                     height: 2.29rem;
                     position: relative;
-                    .img{
+
+                    .img {
                         width: 2.28rem;
                         height: 2.29rem;
-                        img{
+
+                        img {
                             display: inline;
                             height: 100%;
                             width: 100%;
                         }
                     }
-                    .animate{
+
+                    .animate {
                         position: absolute;
                         width: 0.3rem;
                         height: 0.2rem;
@@ -872,84 +947,271 @@ header {
                     }
                 }
             }
-            .right{
+
+            .right {
                 float: left;
-                .module1{
+
+                .module1 {
                     background: #FBE2D3;
                     border-radius: 0.04rem;
                     width: 3.43rem;
                     height: 2.15rem;
                     margin-bottom: 0.04rem;
-                    .m-activityItem{
+
+                    .m-activityItem {
                         background-image: url();
                         background-size: 100% 100%;
                         height: 1.95rem;
                         display: block;
                         color: #333;
-                        width: 3.13rem;
+                        width: 3.43rem;
                         float: left;
-                        border-radius: .05333rem;
+                        border-radius: 0.05333rem;
                         margin: 0 0.04rem 0.04rem 0;
-                        font-size: .32rem;
+                        font-size: 0.24rem;
                         padding: 0.2rem 0 0 0.3rem;
                         position: relative;
-                        .picWrap{
+
+                        .picWrap {
                             top: 0.2rem;
                             position: absolute;
                             right: 0;
                             width: 2rem;
                             height: 2rem;
-                            .pic{
+
+                            .pic {
                                 width: 2rem;
                                 height: 2rem;
-                                img{
+
+                                img {
                                     width: 100%;
                                     height: auto;
                                 }
                             }
-                            .discount{
+
+                            .discount {
                                 top: 0;
                                 right: 0.3rem;
                                 position: absolute;
                                 width: 0.8rem;
-                                height: 0.7rem;
-                                opacity: .8;
+                                height: 0.8rem;
+                                opacity: 0.8;
                                 background: #F59524;
                                 border-radius: 50%;
                                 padding-top: 0.1rem;
                                 color: #fff;
                                 text-align: center;
-                                .line1{
+
+                                .line1 {
                                     font-size: 0.24rem;
                                 }
-                                .line2{
+
+                                .line2 {
                                     font-size: 0.2rem;
                                     margin-top: -0.07rem;
                                     text-decoration: line-through;
                                 }
                             }
                         }
-                        .cnt{
+
+                        .cnt {
                             position: relative;
-                            .title{
+
+                            .title {
                                 font-family: PingFangSC-Medium;
                                 font-size: 0.32rem;
                             }
-                            .subTitle{
+
+                            .subTitle {
                                 color: #7F7F7F;
                             }
                         }
                     }
                 }
-                .modele2{
+
+                .module2 {
                     background: #FFECC2;
                     border-radius: 0.04rem;
                     width: 3.43rem;
                     height: 2.15rem;
+                    .m-activityItem{
+                        // background-image: url(undefined);
+                        // background-size: 100% 100%;
+                        height: 1.95rem;
+                        display: block;
+                        color: #333;
+                        width: 3.43rem;
+                        float: left;
+                        position:relative;
+                        border-radius: 0.04rem;
+                        margin: 0 0.04rem 0.04rem 0;
+                        font-size: 0.24rem;
+                        padding: 0.2rem 0 0 0.3rem;
+                        .picWrap{
+                            top: 0.2rem;
+                            position: absolute;
+                            right: 0;
+                            width: 2rem;
+                            height: 2rem;
+                            .pic {
+                                width: 2rem;
+                                height: 2rem;
+
+                                img {
+                                    display: inline;
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+
+                            .discount {
+                                top: 0;
+                                right: 0.3rem;
+                                position: absolute;
+                                width: 0.8rem;
+                                height: 0.8rem;
+                                opacity: 0.8;
+                                background: #F59524;
+                                border-radius: 50%;
+                                padding-top: 0.1rem;
+                                color: #fff;
+                                text-align: center;
+
+                                .line1 {
+                                    font-size: 0.24rem;
+                                }
+
+                                .line2 {
+                                    font-size: 0.2rem;
+                                    margin-top: -0.07rem;
+                                    text-decoration: line-through;
+                                }
+                            }
+                        }
+                        .cnt {
+                            position: relative;
+
+                            .title {
+                                font-family: PingFangSC-Medium;
+                                font-size: 0.32rem;
+                            }
+
+                            .subTitle {
+                                color: #7F7F7F;
+                            }
+
+                            .tag{
+                                position: relative;
+                                display: inline-block;
+                                padding: 0 0.1rem;
+                                height: 0.32rem;
+                                background: #CBB693;
+                                border-radius: 0.04rem;
+                                color: #fff;
+                                font-size: 0.22rem;
+                                line-height: 0.34rem;
+                                text-align: center;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+.m-indexManufacturersSupplying{
+    padding-bottom: 0.08rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    .moduleTitle{
+        width: 100%;
+        height: 1rem;
+        line-height: 1rem;
+        padding: 0 0.3rem;
+        background: #fff;
+        overflow: hidden;
+        .left{
+            float: left;
+            font-size: 0.32rem;
+            font-family: PingFangSC-Regular;
+        }
+        .right{
+            display: block;
+            font-size: 0.28rem;
+            float: right;
+            color: #333;
+            line-height: 1rem;
+            .u-icon{
+                margin: -0.05rem 0 0 0.08rem;
+            }
+            .u-icon-index-titleArrow{
+                display: inline-block;
+                vertical-align: middle;
+                background-image: url('./images/右箭头.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                width: 0.13rem;
+                height: 0.23rem;
+            }
+        }
+    }
+    .list{
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        margin-bottom: 0.2rem;
+        padding: 0 0.26rem 0.26rem 0.3rem;
+        font-size:0rem;
+        .item{
+            display: inline-block;
+            position: relative;
+            margin: 0 0.04rem 0.04rem 0;
+            width: 3.43rem;
+            height: 2.6 rem;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            border-radius: 0.04rem;
+            .cnt{
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding-top: 0.23rem;
+                width: 100%;
+                z-index: 4;
+                text-align: center;
+                .title{
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    color: #333;
+                    font-family: PingFangSC-Medium;
+                    font-size: 0.28rem;
+                    line-height: 0.34rem;
+                    margin-bottom: 0.03rem;
+                }
+                .price{
+                    color: #7F7F7F;
+                    *{
+                        font-size: 0.24rem;
+                    }
+                }
+                .newIcon{
+                    display: inline-block;
+                    width: 0.64rem;
+                    height: 0.32rem;
+                    color: #fff;
+                    font-size:0.24rem;
+                    line-height: 0.32rem;
+                    text-align: center;
+                    background: #CBB693;
+                    border-radius: 0.04rem;
+                    margin-left: 0.1rem;
+                }
+            }
+        }
+    }
+}
+
 
 </style>

@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll';
+
 import AppFooter from "./components/AppFooter/AppFooter";
 export default {
   name: "App",

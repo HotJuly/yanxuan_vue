@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>gshop_client</title>
-    <link rel="stylesheet" href="./static/css/reset.css">
-    <link rel="stylesheet" href="http://at.alicdn.com/t/font_518606_6676bmcalnrhehfr.css">
-    <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
-    <script>
-      if ('addEventListener' in document) {
-        document.addEventListener('DOMContentLoaded', function() {
-          FastClick.attach(document.body);
-        }, false);
-      }
-      if(!window.Promise) {
-        document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
-      }
-    </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>gshop_client</title>
+  <link rel="stylesheet" href="./static/css/reset.css">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_518606_6676bmcalnrhehfr.css">
+  <style>
+    .swiper-pagination-bullet {
+      margin: 0 0.1rem 0 0;
+      cursor: pointer;
+      width: 0.4rem;
+      height: 0.05rem;
+      display: inline-block;
+      background: #fff;
+      opacity: 0.4;
+      border-radius: 0;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 0.7;
+    }
+
+  </style>
+  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
   <script>
-    (function(width){
-      const fontSize=(window.innerWidth||document.documentElement.clientWidth)/width *100 +"px";
-      document.documentElement.style.fontSize=fontSize;
-      document.body.style.fontSize="12px";
-    })(750)
+    if ('addEventListener' in document) {
+      document.addEventListener('DOMContentLoaded', function () {
+        FastClick.attach(document.body);
+      }, false);
+    }
+    if (!window.Promise) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"' +
+        '>' + '<' + '/' + 'script>');
+    }
+
   </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<script>
+  (function (width) {
+    const fontSize = (window.innerWidth || document.documentElement.clientWidth) / width * 100 + "px";
+    document.documentElement.style.fontSize = fontSize;
+    document.body.style.fontSize = "12px";
+  })(750)
+
+</script>
+
 </html>

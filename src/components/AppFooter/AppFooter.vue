@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import "./imgaes/AppFooter.png";
 export default {
   methods: {
     handleC(path) {
