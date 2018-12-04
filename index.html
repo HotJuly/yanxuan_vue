@@ -22,4 +22,11 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    (function(width){
+      const fontSize=(window.innerWidth||document.documentElement.clientWidth)/width *100 +"px";
+      document.documentElement.style.fontSize=fontSize;
+      document.body.style.fontSize="12px";
+    })(750)
+  </script>
 </html>

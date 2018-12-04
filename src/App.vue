@@ -1,31 +1,29 @@
 <template>
   <div id="app">
     <router-view/>
-    <AppFooter v-show="$route.meta.showFooter"/>
+    <AppFooter/>
   </div>
 </template>
 
 <script>
-import AppFooter from "./pages/AppFooter/AppFooter";
+import AppFooter from "./components/AppFooter/AppFooter";
 export default {
   name: "App",
   components: {
     AppFooter
-  },
-  mounted(){
-    this.$store.dispatch('autoLogin');
   }
 };
 </script>
 
 <style lang="stylus" scoped>
 @import './commons/mixins.styl';
-
 #app {
   width: 100%;
   height: 100%;
   background: #f5f5f5;
   position: relative;
+  font-family: PingFangSC-Light,helvetica,'Heiti SC';
+  line-height: 1.5;
 
   >.on {
     position: fixed;
