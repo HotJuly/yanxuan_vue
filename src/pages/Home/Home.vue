@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div ref="scroll"  @touchmove="handlemove">
         <div class="HomeHeader">
             <header>
                 <a href="/home" id="logo"></a>
@@ -14,36 +14,11 @@
                     <div class="header">
                         <div class="inner">
                             <div class="list">
-                                <div class="tab active"><span class="txt">推荐</span>
+                                <div class="tab active">
+                                    <span class="txt">推荐</span>
                                 </div>
-                                <div class="tab"> <span class="txt">居家</span>
-                                </div>
-                                <div class="tab"><span class="txt">鞋包配饰</span>
-
-                                </div>
-                                <div class="tab"> <span class="txt">服装</span>
-
-                                </div>
-                                <div class="tab"> <span class="txt">电器</span>
-
-                                </div>
-                                <div class="tab"> <span class="txt">洗护</span>
-
-                                </div>
-                                <div class="tab"> <span class="txt">饮食</span>
-
-                                </div>
-                                <div class="tab"> <span class="txt">餐厨</span>
-
-                                </div>
-                                <div class="tab"> <span class="txt">婴童</span>
-
-                                </div>
-                                <div class="tab"> <span class="txt">文体</span>
-
-                                </div>
-                                <div class="tab"> <span class="txt">特色区</span>
-
+                                <div class="tab" v-for="cate in cateList" :key="cate.id">
+                                    <span class="txt">{{cate.name}}</span>
                                 </div>
                             </div>
                         </div>
@@ -62,35 +37,10 @@
                 <div class="slide-con">
                     <div class="swiper-container common-swiper-container swiper-container-horizontal">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide swiper-slide-duplicate" id="7">
-                                <img src="./images/8.jpg">
-                            </div>
-                            <div class="swiper-slide swiper-slide-prev" id="0"style="width: 750px;">
-                                <img src="./images/1.jpg">
-                            </div>
-                            <div class="swiper-slide swiper-slide-active" id="1">
-                                <img src="./images/2.jpg">
-                            </div>
-                            <div class="swiper-slide swiper-slide-next" id="2">
-                                <img src="./images/3.jpg">
-                            </div>
-                            <div class="swiper-slide" id="3">
-                                <img src="./images/4.jpg">
-                            </div>
-                            <div class="swiper-slide" id="4">
-                                <img src="./images/5.jpg">
-                            </div>
-                            <div class="swiper-slide" id="5">
-                                <img src="./images/6.jpg">
-                            </div>
-                            <div class="swiper-slide" id="6">
-                                <img src="./images/7.jpg">
-                            </div>
-                            <div class="swiper-slide" id="7">
-                                <img src="./images/8.jpg">
-                            </div>
-                            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" id="0">
-                                <img src="./images/1.jpg">
+                            <div class="swiper-slide swiper-slide-prev" v-for="focus in focusList" :key="focus.id">
+                                <a :href="focus.targetUrl">
+                                    <img :src="focus.picUrl" >
+                                </a>
                             </div>
                         </div>
                         <div class="swiper-pagination common-swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
@@ -108,22 +58,10 @@
         </div>
         <div class="m-indexServicePolicy newUser active">
             <ul class="g-grow">
-                <li class="item">
+                <li class="item" v-for="(policyDesc,index) in policyDescList" :key="index">
                     <a>
-                        <i class="u-icon u-icon-servicePolicy-index"></i>
-                        <span class="text">网易自营品牌</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a>
-                        <i class="u-icon u-icon-servicePolicy-index"></i>
-                        <span class="text">30天无忧退货</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a>
-                        <i class="u-icon u-icon-servicePolicy-index"></i>
-                        <span class="text">48小时快速退款</span>
+                        <i class="u-icon u-icon-servicePolicy-index" :style="`background:url(${policyDesc.icon}) no-repeat;background-size:100% 100%;`"></i>
+                        <span class="text">{{policyDesc.desc}}</span>
                     </a>
                 </li>
             </ul>
@@ -134,65 +72,11 @@
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <a class="kingkong-item mb-9" >
+                                <a href="" class="kingkong-item mb-9" v-for="cate in cateList">
                                     <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/98b6a6fc32f1fea861934816729e2cf5.png">
+                                        <img class="img" :src="cate.iconUrl">
                                     </div>
-                                    <div class="txt" style="color:#333333;">居家</div>
-                                </a>
-                                <a class="kingkong-item mb-9" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/46d33b9a9fbb659fcbac37ec58d51e62.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">鞋包配饰</div>
-                                </a>
-                                <a class="kingkong-item mb-9" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/31831ada59dc10319cba195620ed9ed0.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">服装</div>
-                                </a>
-                                <a class="kingkong-item mb-9" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/45833c71d4b0d0de0755a20f893fa25f.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">电器</div>
-                                </a>
-                                <a class="kingkong-item mb-9" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/2fde77529e90a26427d1c02faa3bfbf6.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">婴童</div>
-                                </a>
-                                <a class="kingkong-item" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/15e364ca93313bbd6e87dfcba7ae7b74.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">饮食</div>
-                                </a>
-                                <a class="kingkong-item" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/793bca13bb931475ea7f0c00299362bb.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">洗护</div>
-                                </a>
-                                <a class="kingkong-item" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/fc3e359da08577228354da61ea912c99.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">餐厨</div>
-                                </a>
-                                <a class="kingkong-item" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/97eb6fd2c7ea76a3a42b9dafa3bd6543.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">文体</div>
-                                </a>
-                                <a class="kingkong-item" >
-                                    <div class="icon">
-                                        <img class="img" src="http://yanxuan.nosdn.127.net/db5e2ce8c66f7db3f4282ecb24a64236.png">
-                                    </div>
-                                    <div class="txt" style="color:#333333;">超级会员</div>
+                                    <div class="txt" style="color:#333333;">{{cate.name}}</div>
                                 </a>
                             </div>
                         </div>
@@ -265,51 +149,16 @@
                     </a>
                 </div>
                 <ul class="list">
-                    <a class="item" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
+                    <a class="item" :style="`background-image:url(${tag.picUrl});background-size:100% 100%;`"
+                        v-for="tag in tagList" :key="tag.id">
                         <div class="cnt">
-                            <h4 class="title">海外制造商</h4>
+                            <h4 class="title">{{tag.name}}</h4>
                             <div>
                                 <span class="price">
-                                    <span>9.9</span>
+                                    <span>{{tag.floorPrice}}</span>
                                     <span>元起</span>
                                 </span>
-                                <i class="newIcon">上新</i>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
-                        <div class="cnt">
-                            <h4 class="title">海外制造商</h4>
-                            <div>
-                                <span class="price">
-                                    <span>9.9</span>
-                                    <span>元起</span>
-                                </span>
-                                <i class="newIcon">上新</i>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
-                        <div class="cnt">
-                            <h4 class="title">海外制造商</h4>
-                            <div>
-                                <span class="price">
-                                    <span>9.9</span>
-                                    <span>元起</span>
-                                </span>
-                                <i class="newIcon">上新</i>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="item" style="background-image:url(http://yanxuan.nosdn.127.net/802ff06dd3ef161db046eeb8db6cb4be.jpg?imageView&thumbnail=343y260&enlarge=1);background-size:100% 100%;">
-                        <div class="cnt">
-                            <h4 class="title">海外制造商</h4>
-                            <div>
-                                <span class="price">
-                                    <span>9.9</span>
-                                    <span>元起</span>
-                                </span>
-                                <i class="newIcon">上新</i>
+                                <i class="newIcon" v-show="tag.newOnShelf">上新</i>
                             </div>
                         </div>
                     </a>
@@ -424,39 +273,67 @@
                 </div>
             </div> -->
         </div>
+        <!-- goTop按钮 -->
+        <transition name="goTop">
+            <div class="goTop" v-show="goTop" @click="handleGoTop"></div>        
+        </transition>
     </div>
 </template>
 
 <script>
 import BScroll from "better-scroll";
 import Swiper from 'swiper';
+import {mapState} from 'vuex';
 export default {
-  mounted() {
+    data(){
+        return {
+            goTop:false
+        }
+    },
+    computed:{
+        ...mapState(['focusList','cateList','tagList','policyDescList'])
+    },
+    methods:{
+        handlemove(event){
+            if(document.documentElement.scrollTop>200){
+                this.goTop=true;
+            }else{
+                this.goTop=false;
+            }
+        },
+        handleGoTop(){
+            this.goTop=false;
+            requestAnimationFrame(function fn(){
+                const scrollY=document.documentElement.scrollTop;
+                if(scrollY!=0){
+                    document.documentElement.scrollTop-=30;
+                    requestAnimationFrame(fn);
+                }
+            })
+        }
+    },
+    mounted() {
     new BScroll(".inner", {
       click: true,
       scrollX: true
     });
     
-    new Swiper(".swiper-container-horizontal",{
-        autoplay:true,
-        loop:true,
-        pagination:{
-            el:'.swiper-pagination-clickable',
-            // type: 'custom',
-			// renderCustom: function(swiper, current, total) {
-			// 	var customPaginationHtml = "";
-			// 	for(var i = 0; i < total; i++) {
-			// 		//判断哪个分页器此刻应该被激活
-			// 		if(i == (current - 1)) {
-			// 			customPaginationHtml += '<span class="swiper-pagination-customs swiper-pagination-customs-active"></span>';
-			// 		} else {
-			// 			customPaginationHtml += '<span class="swiper-pagination-customs"></span>';
-			// 		}
-			// 	}
-			// 	return customPaginationHtml;
-			// }
-        },
+    this.$store.dispatch('getFocusList',()=>{
+        this.$nextTick(()=>{
+                new Swiper('.swiper-container-horizontal',{
+                autoplay:{
+                    disableOnInteraction: false
+                },
+                loop:true,
+                pagination:{
+                    el:'.swiper-pagination-clickable'
+                },
+            });
+        })
     });
+    this.$store.dispatch('getCateList');
+    this.$store.dispatch('getTagList');
+    this.$store.dispatch('getPolicyDescList');
   }
 };
 </script>
@@ -701,17 +578,22 @@ header {
                     position: relative;
                     flex-shrink: 0;
                     height: 100%;
-                    width: 7.5rem;
+                    width:100%;
 
-                    >img {
-                        width: 100%;
-                        height: auto;
-                        position: absolute;
-                        left: 0;
-                        top: 50%;
-                        transform: translateY(-50%);
-                        background-color: #f9f9f9;
-                        border: 0;
+                    a{
+                        display:block;
+                        width:100%;
+                        height:100%;
+                        img {
+                            width: 100%;
+                            height: auto;
+                            position: absolute;
+                            left: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            background-color: #f9f9f9;
+                            border: 0;
+                        }
                     }
                 }
             }
@@ -1213,5 +1095,20 @@ header {
     }
 }
 
+.goTop{
+    width:0.82rem;
+    height:0.82rem;
+    background:url('./images/goTop.png') no-repeat;
+    background-size:100% 100%;
+    position:fixed;
+    right:0.23rem;
+    bottom:1.2rem;
+    &.goTop-enter,&.goTop.leave-to{
+        opacity:0;
+    }
+    &.goTop-enter-active,&.goTop.leave-active{
+        transition:opacity 0.3s;
+    }
+}
 
 </style>
