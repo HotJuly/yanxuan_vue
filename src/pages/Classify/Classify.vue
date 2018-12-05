@@ -8,164 +8,32 @@
         </header>
         <div class="content">
             <div class="left">
-                <ul>
-                    <li class="item active">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                    <li class="item">
-                        12.12专区
-                    </li>
-                </ul>
+                <div class="wrap">
+                    <ul>
+                        <li class="item" :class="{active:curIndex==index}" v-for="(cate,index) in category" :key="cate.id" @click="curIndex=index">
+                            {{cate.name}}
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="right">
-                <img src="http://yanxuan.nosdn.127.net/52855d9a0c1f738f26ac125913af0012.jpg?imageView&thumbnail=0x196&quality=75"/>
-                <div class="cateList">
-                    <ul class="list">
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li>
-                        <!-- <li>
-                            <a href="#">
-                                <div class="img">
-                                    <img src="http://yanxuan.nosdn.127.net/39c1c32ca2301ced934e35db33150637.png?imageView&quality=85&thumbnail=144x144" />
-                                </div>
-                                <div class="name">
-                                    三石福利价
-                                </div>
-                            </a>
-                        </li> -->
-                        <!-- <li class="itemempty"></li> -->
-                    </ul>
+                <div>
+                    <img :src="category[curIndex].wapBannerUrl" v-if="category.length>0"/>
+                    <div class="cateList">
+                        <ul class="list">
+                            <li v-for="subCate in subCateList" :key="subCate.id">
+                                <a :href="`http://m.you.163.com/item/list?categoryId=${subCate.id}&subCategoryId=${subCate.id}`">
+                                    <div class="img">
+                                        <img :src="subCate.wapBannerUrl" />
+                                    </div>
+                                    <div class="name">
+                                        {{subCate.name}}
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="itemempty"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -173,7 +41,34 @@
 </template>
 
 <script>
-export default {};
+import {mapState,mapGetters} from 'vuex';
+import BScroll from 'better-scroll';
+export default {
+    data(){
+        return {
+            curIndex:0
+        }
+    },
+    computed:{
+        ...mapState(['category']),
+        ...mapGetters(['subCateLists']),
+        subCateList(){
+            return this.subCateLists[this.curIndex];
+        }
+    },
+    mounted(){
+        this.$store.dispatch('getCategory',()=>{
+            this.$nextTick(()=>{
+                this.leftScroll=new BScroll('.left',{
+                    click:true
+                });
+                this.rightScroll=new BScroll('.right',{
+                    click:true
+                });
+            })
+        });
+    }
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -233,83 +128,93 @@ header {
 
     .left {
         float: left;
-        padding: 0.4rem 0 1.38rem;
         margin-right: 0.02rem;
+        height 100%
         background-color: #fff;
         overflow: hidden;
+        >.wrap{
+            padding: 0.4rem 0 0.97rem;
+            ul {
+                width: 1.6rem;
+                text-align: center;
 
-        ul {
-            width: 1.6rem;
-            text-align: center;
+                li {
+                    width: 100%;
+                    height: 0.5rem;
+                    margin-bottom: 0.4rem;
+                    line-height: 0.5rem;
+                    position: relative;
 
-            li {
-                width: 100%;
-                height: 0.5rem;
-                margin-bottom: 0.4rem;
-                line-height: 0.5rem;
-                position: relative;
+                    &.active {
+                        color: #ab2b2b;
 
-                &.active {
-                    color: #ab2b2b;
-
-                    &::before {
-                        content: ' ';
-                        display: block;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 0.06rem;
-                        height: 100%;
-                        background-color: #ab2b2b;
+                        &::before {
+                            content: ' ';
+                            display: block;
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 0.06rem;
+                            height: 100%;
+                            background-color: #ab2b2b;
+                        }
                     }
                 }
             }
         }
+
     }
 
     .right {
         float: left;
         background-color: #fff;
         width:5.88rem;
-        padding: 0.3rem 0.3rem 1.38rem;
+        height:100%;
+        >div{
+            padding: 0.3rem 0.3rem 0.97rem;
+            >img {
+                width: 5.28rem;
+                height: 1.92rem;
+                display: block;
+                margin-bottom: 0.32rem;
+            }
 
-        >img {
-            width: 5.28rem;
-            height: 1.92rem;
-            display: block;
-            margin-bottom: 0.32rem;
-        }
-
-        >.cateList {
-            .list {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap wrap
-                &::after{
-                    height: 0px;
-                }
-
-                li {
-                    width:1.44rem;
+            >.cateList {
+                .list {
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-between;
+                    flex-wrap wrap
+                    // &::after{
+                    //     // content:" ";
+                    //     // display block
+                    //     // flex:auto;
+                    //     height: 0px;
+                    // }
 
-                    .img {
-                        width: 1.44rem;
-                        height: 1.44rem;
-
-                        >img {
-                            width: 100%;
-                            height: auto;
+                    li {
+                        width:1.44rem;
+                        display: flex;
+                        justify-content: center;
+                        .itemempty{
+                            height: 0px;
                         }
-                    }
+                        .img {
+                            width: 1.44rem;
+                            height: 1.44rem;
 
-                    .name {
-                        font-size: 0.24rem;
-                        height: 0.72rem;
-                        text-align: center;
-                        line-height: 0.36rem;
-                        color: #333;
+                            >img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+
+                        .name {
+                            font-size: 0.24rem;
+                            height: 0.72rem;
+                            text-align: center;
+                            line-height: 0.36rem;
+                            color: #333;
+                        }
                     }
                 }
             }

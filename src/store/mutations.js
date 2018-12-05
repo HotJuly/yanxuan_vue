@@ -1,5 +1,5 @@
 
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST} from './mutations-type';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY} from './mutations-type';
 
 export default {
     [SETTOPICLIST](state,{topicList}){
@@ -16,5 +16,11 @@ export default {
     },
     [SETPOLICYDESCLIST](state,{policyDescList}){
         state.policyDescList=policyDescList;
+    },
+    [SETPOLICYDESCLIST](state,{policyDescList}){
+        state.policyDescList=policyDescList;
+    },
+    [SETCATEGORY](state,{category}){
+        state.category=category;
     },
 }

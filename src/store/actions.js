@@ -1,5 +1,5 @@
-import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList} from '../api';
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST} from './mutations-type';
+import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory} from '../api';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY} from './mutations-type';
 export default {
     async getFocusList({commit},cb){
         const result = await reqFocusList();
@@ -24,6 +24,13 @@ export default {
         const result = await reqPolicyDescList();
         if(!result.code){
             commit(SETPOLICYDESCLIST,{policyDescList:result.data});
+        }
+    },
+    async getCategory({commit},cb){
+        const result = await reqCategory();
+        if(!result.code){
+            commit(SETCATEGORY,{category:result.data});
+            typeof cb=="function"&&cb();
         }
     },
 }

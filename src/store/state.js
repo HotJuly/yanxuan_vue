@@ -4,5 +4,6 @@ export default {
     focusList:[],
     cateList:[],
     tagList:[],
-    policyDescList:[]
+    policyDescList:[],
+    category:[]
 }

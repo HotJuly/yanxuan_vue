@@ -11,3 +11,4 @@ Mock.mock("/focusList",{code:0,data:msite.focusList});
 Mock.mock("/cateList",{code:0,data:msite.cateList});
 Mock.mock("/tagList",{code:0,data:msite.tagList});
 Mock.mock("/policyDescList",{code:0,data:msite.policyDescList});
+Mock.mock("/category",{code:0,data:category});
