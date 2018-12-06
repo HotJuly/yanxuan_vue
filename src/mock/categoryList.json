@@ -1,0 +1,160 @@
+[{
+    "categoryList": [{
+        "showIndex": 1,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/65a7ae2867d891a241dd8291a9037c84.png",
+        "bannerUrl": "",
+        "frontDesc": "严格用料，亲肤舒适",
+        "type": 0,
+        "frontName": "MUJI等品牌制造商出品",
+        "superCategoryId": 1005000,
+        "name": "床品件套",
+        "id": 1008009,
+        "subCateList": []
+      },
+      {
+        "showIndex": 2,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/cc507ff0ce7cafc1012885a01fb1942a.png",
+        "bannerUrl": "",
+        "frontDesc": "选用优质材料，确保好芯",
+        "type": 0,
+        "frontName": "守护你的睡眠时光",
+        "superCategoryId": 1005000,
+        "name": "被枕",
+        "id": 1008008,
+        "subCateList": []
+      }
+    ],
+    "name": "床品",
+    "id": 45819260
+  },
+  {
+    "categoryList": [{
+        "showIndex": 3,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/4628932649a190c464d138c9236591fa.png",
+        "frontDesc": "一级原木，严苛工艺",
+        "type": 0,
+        "frontName": "大师级工艺",
+        "superCategoryId": 1005000,
+        "name": "家具",
+        "id": 1015000,
+        "subCateList": []
+      },
+      {
+        "showIndex": 4,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/d04070745e3e6b7588aba519d48ad9d6.png",
+        "bannerUrl": "",
+        "frontDesc": "极简主义，贴近生活的设计",
+        "type": 0,
+        "frontName": "一盏灯，温暖一个家",
+        "superCategoryId": 1005000,
+        "name": "灯具",
+        "id": 1008016,
+        "subCateList": []
+      },
+      {
+        "showIndex": 6,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/dd9cd8d2dae44d4319ab21919021435b.png",
+        "bannerUrl": "",
+        "frontDesc": "换个软装，换个家",
+        "type": 0,
+        "frontName": "各种风格软装装点你的家",
+        "superCategoryId": 1005000,
+        "name": "布艺软装",
+        "id": 1008002,
+        "subCateList": []
+      },
+      {
+        "showIndex": 7,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/567f5588c5c86eeca8c94413d7c45e47.png",
+        "bannerUrl": "",
+        "frontDesc": "点缀美好生活，品质在于细节",
+        "type": 0,
+        "frontName": "装饰你的家",
+        "superCategoryId": 1005000,
+        "name": "家饰",
+        "iconUrl": "",
+        "id": 1011004,
+        "subCateList": []
+      }
+    ],
+    "name": "家具家装",
+    "id": 45819661
+  },
+  {
+    "categoryList": [{
+        "showIndex": 5,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/c8af5398744d2ed87d2459ec3d29d83e.png",
+        "bannerUrl": "",
+        "frontDesc": "智慧收纳，抗菌防霉，便利拆卸，小空间的大智慧",
+        "type": 0,
+        "frontName": "选自古驰竹柄原料供应商",
+        "superCategoryId": 1005000,
+        "name": "收纳",
+        "id": 1008017,
+        "subCateList": []
+      },
+      {
+        "showIndex": 8,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/09f2f2e348111984dd2c65dd8bcbf5d8.png",
+        "frontDesc": "便携设计，轻便旅途",
+        "type": 0,
+        "frontName": "出行小物，贴心相伴",
+        "superCategoryId": 1005000,
+        "name": "旅行用品",
+        "id": 1020000,
+        "subCateList": []
+      },
+      {
+        "showIndex": 9,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/0001332cb0db9939076f56c1dddbad26.png",
+        "frontDesc": "居家晾晒必备好物",
+        "type": 0,
+        "frontName": "居家晾晒必备好物",
+        "superCategoryId": 1005000,
+        "name": "晾晒除味",
+        "id": 1092010,
+        "subCateList": []
+      }
+    ],
+    "name": "收纳",
+    "id": 45820462
+  },
+  {
+    "categoryList": [{
+        "showIndex": 10,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/87b577640f8ca129bd54aba64242998b.png",
+        "frontDesc": "专业家庭医用好物",
+        "type": 0,
+        "frontName": "专业家庭医用好物",
+        "superCategoryId": 1005000,
+        "name": "家庭医疗",
+        "id": 1092011,
+        "subCateList": []
+      },
+      {
+        "showIndex": 11,
+        "level": "L2",
+        "wapBannerUrl": "http://yanxuan.nosdn.127.net/f61101c3e9d772e2b8198e8bac611f2e.png",
+        "frontDesc": "出口品质，严选贴合萌宠生活习惯用品。",
+        "type": 0,
+        "frontName": "抑菌除味，打造宠物舒适空间",
+        "superCategoryId": 1005000,
+        "name": "宠物",
+        "id": 1017000,
+        "subCateList": []
+      }
+    ],
+    "name": "医疗宠物",
+    "id": 45821063
+  }
+]

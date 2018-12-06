@@ -1,5 +1,5 @@
-import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory} from '../api';
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY} from './mutations-type';
+import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWu} from '../api';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU} from './mutations-type';
 export default {
     async getFocusList({commit},cb){
         const result = await reqFocusList();
@@ -30,6 +30,19 @@ export default {
         const result = await reqCategory();
         if(!result.code){
             commit(SETCATEGORY,{category:result.data});
+            typeof cb=="function"&&cb();
+        }
+    },
+    async getCategoryList({commit}){
+        const result = await reqCategoryList();
+        if(!result.code){
+            commit(SETCATEGORYLIST,{categoryList:result.data});
+        }
+    },
+    async getShiWu({commit},cb){
+        const result = await reqShiWu();
+        if(!result.code){
+            commit(SETSHIWU,{shiwu:result.data});
             typeof cb=="function"&&cb();
         }
     },

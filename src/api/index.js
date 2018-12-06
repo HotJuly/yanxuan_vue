@@ -8,3 +8,5 @@ export const reqCateList =()=>ajax(`/cateList`);
 export const reqTagList =()=>ajax(`/tagList`);
 export const reqPolicyDescList =()=>ajax(`/policyDescList`);
 export const reqCategory =()=>ajax(`/category`);
+export const reqCategoryList =()=>ajax(`/categoryList`);
+export const reqShiWu =()=>ajax(`/shiwu`);

@@ -19,7 +19,24 @@
             <div class="right">
                 <div>
                     <img :src="category[curIndex].wapBannerUrl" v-if="category.length>0"/>
-                    <div class="cateList">
+                    <div class="cateList" v-if="categoryList&&categoryList.length>0">
+                        <ul class="list" style="display:block;" v-for="categoryObj in categoryList" :key="categoryObj.id">
+                            <div class="hd">{{categoryObj.name}}</div>
+                            <li v-for="category in categoryObj.categoryList" :key="category.id" style="float:left;margin-right:0.32rem">
+                                <a :href="`http://m.you.163.com/item/list?categoryId=${categoryObj.id}&subCategoryId=${category.id}`">
+                                    <div class="img">
+                                        <img :src="category.wapBannerUrl" />
+                                    </div>
+                                    <div class="name">
+                                        {{category.name}}
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="itemempty"></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cateList" v-else>
                         <ul class="list">
                             <li v-for="subCate in subCateList" :key="subCate.id">
                                 <a :href="`http://m.you.163.com/item/list?categoryId=${subCate.id}&subCategoryId=${subCate.id}`">
@@ -51,9 +68,12 @@ export default {
     },
     computed:{
         ...mapState(['category']),
-        ...mapGetters(['subCateLists']),
+        ...mapGetters(['subCateLists','categoryLists']),
         subCateList(){
             return this.subCateLists[this.curIndex];
+        },
+        categoryList(){
+            return this.categoryLists[this.curIndex];
         }
     },
     mounted(){
@@ -65,8 +85,10 @@ export default {
                 this.rightScroll=new BScroll('.right',{
                     click:true
                 });
+            console.log(this.cateList)
             })
         });
+        // this.$store.dispatch('getCategoryList')
     }
 };
 </script>
@@ -180,10 +202,21 @@ header {
             }
 
             >.cateList {
+                .hd{
+                    white-space: nowrap;
+                    max-width: 5.28rem;
+                    padding-bottom: 0.08rem;
+                    margin-bottom: 0.24rem;
+                    text-align: left;
+                    font-size: 0.28rem;
+                    font-weight: 700;
+                    border-bottom: 0.01rem solid #d9d9d9;
+                }
                 .list {
                     display: flex;
                     justify-content: space-between;
                     flex-wrap wrap
+                    clearFix()
                     // &::after{
                     //     // content:" ";
                     //     // display block
@@ -195,7 +228,7 @@ header {
                         width:1.44rem;
                         display: flex;
                         justify-content: center;
-                        .itemempty{
+                        &.itemempty{
                             height: 0px;
                         }
                         .img {
