@@ -5,7 +5,7 @@ export default {
         })
     },
     categoryLists({category}){
-        return category.map((cate,index)=>{
+        return category.map((cate)=>{
             if(!cate.categoryList){
                 return [];
             }else{

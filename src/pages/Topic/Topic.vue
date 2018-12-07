@@ -13,11 +13,11 @@
                 </div>
             </div>
             <div class="flexbox">
-                <router-link to="/topic/recommend" class="item">推荐</router-link>
-                <router-link to="/topic/expert" class="item">达人</router-link>
-                <router-link to="/topic/newproduct" class="item">上新</router-link>
-                <router-link to="/topic/share" class="item">晒单</router-link>
-                <router-link to="/topic/topichome" class="item">HOME</router-link>
+                <router-link to="/topic/0" class="item">推荐</router-link>
+                <router-link to="/topic/1" class="item">达人</router-link>
+                <router-link to="/topic/2" class="item">上新</router-link>
+                <router-link to="/topic/3" class="item">晒单</router-link>
+                <router-link to="/topic/4" class="item">HOME</router-link>
             </div>
         </header>
         <router-view/>

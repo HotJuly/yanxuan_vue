@@ -6,5 +6,6 @@ export default {
     category:[],
     shiwu:[],
     newProducts:[],
-    topicHomes:[]
+    topicHomes:[],
+    ShiWuList:[],
 }

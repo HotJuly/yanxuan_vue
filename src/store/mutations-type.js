@@ -9,3 +9,6 @@ export const SETSHIWU='setShiWu';
 export const SETSHIWUMORE='setShiWuMore';
 export const SETNEWPRODUCTS='setNewProducts';
 export const SETTOPICHOMES='setTopicHomes';
+export const SETSHIWUINIT='setShiWuInit';
+export const SETSHIWULIST='setShiWuList';
+export const RESETSHIWULIST='resetShiWuList';

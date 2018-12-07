@@ -1,5 +1,5 @@
-import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWu,reqNewProducts,reqTopicHomes,reqShiWuMore} from '../api';
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE} from './mutations-type';
+import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWu,reqNewProducts,reqTopicHomes,reqShiWuMore,reqShiWuList,reqShiWuInit} from '../api';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST} from './mutations-type';
 export default {
     async getFocusList({commit},cb){
         const result = await reqFocusList();
@@ -46,17 +46,17 @@ export default {
             typeof cb=="function"&&cb();
         }
     },
-    async getShiWuMore({commit}){
-        const result = await reqShiWuMore();
-        console.log(result)
-        if(result.code){
-            let resultArr=result.data.result;
-            let shiwu=resultArr.map((obj)=>{
-                return obj.topics
-            })
-            commit(SETSHIWUMORE,{shiwu});
-        }
-    },
+    // async getShiWuMore({commit}){
+    //     const result = await reqShiWuMore();
+    //     console.log(result)
+    //     if(result.code){
+    //         let resultArr=result.data.result;
+    //         let shiwu=resultArr.map((obj)=>{
+    //             return obj.topics
+    //         })
+    //         commit(SETSHIWUMORE,{shiwu});
+    //     }
+    // },
     async getNewProducts({commit},cb){
         const result = await reqNewProducts();
         if(!result.code){
@@ -70,5 +70,27 @@ export default {
             commit(SETTOPICHOMES,{topicHomes:result.data});
             typeof cb=="function"&&cb();
         }
+    },
+    async getShiWuInit({commit},{cb}){
+        const result = await reqShiWuInit();
+        if(result.code==200){
+            commit(SETSHIWUINIT,{data:result.data});
+            typeof cb=="function"&&cb();
+        }
+    },
+    async getShiWuMore({commit},{id,cb,page}){
+        let result;
+        if(id===3){
+            result = await reqShiWuMore(page);
+        }else{
+            result = await reqShiWuList(id,page);
+        }
+        if(result.code==200){
+            commit(SETSHIWULIST,{data:result.data.result});
+            typeof cb=="function"&&cb();
+        }
+    },
+    async resetShiWuList({commit}){
+        commit(RESETSHIWULIST);
     },
 }
