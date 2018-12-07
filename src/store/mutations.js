@@ -1,5 +1,5 @@
 
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST} from './mutations-type';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS} from './mutations-type';
 
 export default {
     [SETTOPICLIST](state,{topicList}){
@@ -38,6 +38,13 @@ export default {
     [SETTOPICHOMES](state,{topicHomes}){
         state.topicHomes=topicHomes;
     },
+
+    //将识物的栏目数据放到ShiWuTabs中
+    [SETSHIWUTABS](state,{ShiWuTabs}){
+        state.ShiWuTabs=ShiWuTabs;
+    },
+
+    //将推荐栏目请求到的首屏数据进行处理,并作为ShiWuList
     [SETSHIWUINIT](state,{data}){
         let shiwuArr=[];
         data.forEach(({topics})=>{
@@ -46,16 +53,28 @@ export default {
         });
         state.ShiWuList=shiwuArr;
     },
+    
+    //将请求到的数据(推荐的懒加载数据和其他栏目的首屏及懒加载数据)进行处理,并插入到ShiWuList中
     [SETSHIWULIST](state,{data}){
+        let shiwuArr=[];
+        //处理推荐栏目的数据
         if(data.length>0&&data[0].look){
-             let shiwuArr=[];
              data.forEach((item)=>{
                  if(item.topics.length>0) {
-                    shiwuArr=shiwuArr.concat(...item.topics);
+                     let topics=item.topics.filter((topic)=>{
+                         return topic!==null;
+                        });
+                    shiwuArr=shiwuArr.concat(...topics);
                  }
             })
             state.ShiWuList=state.ShiWuList.concat(shiwuArr)
         }else{
+            //处理除推荐以外的数据
+            data.forEach((topic)=>{
+                if(topic.itemList){
+                    topic.itemList=topic.itemList.filter((item)=>item);
+                }
+           })
             state.ShiWuList=state.ShiWuList.concat(data);
         }
     },

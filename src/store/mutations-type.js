@@ -12,3 +12,4 @@ export const SETTOPICHOMES='setTopicHomes';
 export const SETSHIWUINIT='setShiWuInit';
 export const SETSHIWULIST='setShiWuList';
 export const RESETSHIWULIST='resetShiWuList';
+export const SETSHIWUTABS='setShiWuTabs';

@@ -12,12 +12,14 @@
                     <div class="search" @click="$router.replace('/home')"></div>
                 </div>
             </div>
-            <div class="flexbox">
-                <router-link to="/topic/0" class="item">推荐</router-link>
-                <router-link to="/topic/1" class="item">达人</router-link>
-                <router-link to="/topic/2" class="item">上新</router-link>
-                <router-link to="/topic/3" class="item">晒单</router-link>
-                <router-link to="/topic/4" class="item">HOME</router-link>
+            <div class="scroll">
+                <div class="flexbox">
+                    <router-link :to="`/topic/${tab.tabId}`" class="item" v-for="tab in ShiWuTabs" :key="tab.tabId">{{tab.tabName}}</router-link>
+                    <!-- <router-link to="/topic/1" class="item">达人</router-link>
+                    <router-link to="/topic/2" class="item">上新</router-link>
+                    <router-link to="/topic/3" class="item">晒单</router-link>
+                    <router-link to="/topic/4" class="item">HOME</router-link> -->
+                </div>
             </div>
         </header>
         <router-view/>
@@ -25,7 +27,24 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll';
+import {mapState} from 'vuex';
 export default {
+    computed:{
+        ...mapState(['ShiWuTabs'])
+    },
+    methods:{
+        _initBScroll(){
+            this.$nextTick(()=>{
+                new BScroll('.scroll',{
+                    click:true
+                })
+            });
+        }
+    },
+    mounted(){
+        this.$store.dispatch('getShiWuTabs',{cb:this._initBScroll})
+    }
 }
 </script>
 
@@ -93,26 +112,35 @@ header{
             }
         }
     }
-    .flexbox{
+    .scroll{
         width 100%
-        height 0.72rem
-        background: #fafafa;
-        border-bottom: 0.01rem solid #d9d9d9;
-        font-size 0px
+        height 100%
+        overflow hidden
         display flex
-        justify-content space-around
-        .item{
-            display: inline-block;
-            height: .72rem;
-            line-height: .72rem;
-            padding: 0 .08rem;
-            margin: 0 .2rem;
-            vertical-align: middle;
-            font-size: .28rem;
-            color: #7F7F7F;
-            &.active{
-                color: #B4282D;
-                border-bottom: 0.035rem solid #B4282D;
+        .flexbox{
+            flex-shrink 0
+            flex-grow 1
+            height 0.72rem
+            background: #fafafa;
+            border-bottom: 0.01rem solid #d9d9d9;
+            font-size 0px
+            display flex
+            justify-content space-around
+            .item{
+                display: inline-block;
+                flex-shrink:0; 
+                // width: .72rem;
+                height: 100%;
+                line-height: .72rem;
+                padding: 0 .08rem;
+                margin: 0 .2rem;
+                vertical-align: middle;
+                font-size: .28rem;
+                color: #7F7F7F;
+                &.active{
+                    color: #B4282D;
+                    border-bottom: 0.035rem solid #B4282D;
+                }
             }
         }
     }

@@ -1,14 +1,14 @@
 <template>
     <div class="list" ref="list">
         <div>
-            <div v-for="(card,index) in ShiWuList">
+            <iframe  v-if="id===7" src="https://m.you.163.com/topic/static/look/index" frameborder="0" allowtransparency="true" name="mframe2"></iframe>
+            <div v-for="(card,index) in ShiWuList" v-else>
                 <RecommendItem v-if="card.type===2" :card="card" :key="index"/>
                 <ExpertItem v-if="card.type===1" :card="card" :key="index"/>
                 <NewProductItem v-if="card.type===7" :card="card" :key="index"/>
                 <ImageItem v-if="card.type===5" :card="card" :key="index"/>
                 <HomeItem v-if="card.type===8" :card="card" :key="index"/>
             </div>
-            <!-- <iframe v-if="id===3" src="https://m.you.163.com/topic/static/look/index" frameborder="0" allowtransparency="true" name="mframe2"></iframe> -->
         </div>
     </div>
 </template>
@@ -31,17 +31,13 @@ export default {
   },
   watch: {
     id() {
-      let id = this.id + 3;
+      let id = this.id;
       this.page = 1;
       const cb=this.bsfresh;
       this.$store.dispatch("resetShiWuList");
-      if (id === 3) {
+      if (id === 9) {
         this.$store.dispatch("getShiWuInit", { cb });
-      } else if (id !== 6) {
-        if (id === 7) {
-          id = 6;
-        }
-        // console.log(id)
+      } else if (id !== 7) {
         this.$store.dispatch("getShiWuMore", {
           id,
           page: this.page,
@@ -62,23 +58,16 @@ export default {
           click: true,
           pullUpLoad:true
         });
-        let id = this.id + 3;
         this.bscroll.on("pullingUp", () => {
-          // console.log(this.bscroll.y , this.bscroll.maxScrollY)
-          // if (this.bscroll.y <= this.bscroll.maxScrollY) {
             this.page = this.page + 1;
-            // console.log(id)
-            if (id !== 6) {
-              if (id === 7) {
-                id = 6;
-              }
-              // console.log('+++')
+            if (this.id !== 7) {
+              let id=this.id;
               const cb=()=>{
                 this.$nextTick(()=>{
-                this.bscroll.finishPullUp();
-                this.bscroll.refresh();
+                  this.bscroll.finishPullUp();
+                  this.bscroll.refresh();
                 })
-                };
+              };
 
               this.$store.dispatch("getShiWuMore", {
                 id,
@@ -86,7 +75,6 @@ export default {
                 cb
               });
             }
-          // }
         });
       });
     },
@@ -98,14 +86,11 @@ export default {
   },
   mounted() {
     console.log("mounted");
-    let id = this.id + 3;
+    let id = this.id;
     const cb = this.newBScroll;
-    if (id === 3) {
+    if (id === 9) {
       this.$store.dispatch("getShiWuInit", { cb });
-    } else if (id !== 6) {
-      if (id === 7) {
-        id = 6;
-      }
+    } else if (id !== 7) {
       this.$store.dispatch("getShiWuMore", { id, cb, page: this.page });
     }else{
         cb()
@@ -132,13 +117,13 @@ export default {
     padding: 1.73rem 0 0.97rem;
   }
 
-  // iframe {
-  //   display: block;
-  //   width: 100%;
-  //   height: 11.6rem;
-  //   left: 0;
-  //   top: 0;
-  //   overflow-x: hidden;
-  // }
+  iframe {
+    display: block;
+    width: 100%;
+    height: 11.6rem;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+  }
 }
 </style>

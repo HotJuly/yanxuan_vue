@@ -8,4 +8,5 @@ export default {
     newProducts:[],
     topicHomes:[],
     ShiWuList:[],
+    ShiWuTabs:[]
 }

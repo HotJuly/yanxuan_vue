@@ -1,5 +1,5 @@
-import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWu,reqNewProducts,reqTopicHomes,reqShiWuMore,reqShiWuList,reqShiWuInit} from '../api';
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST} from './mutations-type';
+import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWu,reqNewProducts,reqTopicHomes,reqShiWuMore,reqShiWuList,reqShiWuInit,reqShiWuTabs} from '../api';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS} from './mutations-type';
 export default {
     async getFocusList({commit},cb){
         const result = await reqFocusList();
@@ -46,17 +46,6 @@ export default {
             typeof cb=="function"&&cb();
         }
     },
-    // async getShiWuMore({commit}){
-    //     const result = await reqShiWuMore();
-    //     console.log(result)
-    //     if(result.code){
-    //         let resultArr=result.data.result;
-    //         let shiwu=resultArr.map((obj)=>{
-    //             return obj.topics
-    //         })
-    //         commit(SETSHIWUMORE,{shiwu});
-    //     }
-    // },
     async getNewProducts({commit},cb){
         const result = await reqNewProducts();
         if(!result.code){
@@ -71,6 +60,8 @@ export default {
             typeof cb=="function"&&cb();
         }
     },
+
+    //获取设置推荐栏目的首屏数据
     async getShiWuInit({commit},{cb}){
         const result = await reqShiWuInit();
         if(result.code==200){
@@ -78,9 +69,11 @@ export default {
             typeof cb=="function"&&cb();
         }
     },
+
+    //加载更多Card,及除推荐栏目外的首屏数据
     async getShiWuMore({commit},{id,cb,page}){
         let result;
-        if(id===3){
+        if(id===9){
             result = await reqShiWuMore(page);
         }else{
             result = await reqShiWuList(id,page);
@@ -90,7 +83,18 @@ export default {
             typeof cb=="function"&&cb();
         }
     },
+
+    //清空ShiWuList数组
     async resetShiWuList({commit}){
         commit(RESETSHIWULIST);
+    },
+
+    //获取设置ShiWuTabs数组
+    async getShiWuTabs({commit},{cb}){
+        const result = await reqShiWuTabs();
+        if(result.code==200){
+            commit(SETSHIWUTABS,{ShiWuTabs:result.data});
+            typeof cb=="function"&&cb();
+        }
     },
 }

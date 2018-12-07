@@ -1,8 +1,6 @@
 import axios from "axios";
-let _url;
-
 const CancelToken = axios.CancelToken;
-const source = CancelToken.source();
+let cancel;
 
 export default function ajax(url,data={},method="GET"){
     const {onlyOne}=data;
@@ -10,12 +8,10 @@ export default function ajax(url,data={},method="GET"){
         let promise;
         if(onlyOne){
             delete data.onlyOne;
-            // _url=url;
-        }
-        if(onlyOne&&source.token){
-            console.log(source);
-            source.cancel('取消一个');
-            console.log(source);
+            if(typeof cancel==="function"){
+                cancel();
+                console.log('取消一个');
+            }
         }
         if(method=="GET"){
             if(JSON.stringify(data) != "{}"){
@@ -27,7 +23,9 @@ export default function ajax(url,data={},method="GET"){
             }
             if(onlyOne){
                 promise = axios.get(url,{
-                    cancelToken: source.token
+                    cancelToken:new CancelToken(function(c){
+                        cancel=c;
+                    })
               });
             }else{
                 promise = axios.get(url);
@@ -36,11 +34,8 @@ export default function ajax(url,data={},method="GET"){
             promise=axios.post(url,data)
         }
         promise.then((response)=>{
-            // if(!onlyOne||_url===url){
-                resolve(response.data)
-            // }else{
-            //     console.log('取消的请求:',response.data);
-            // }
-        })
+            resolve(response.data)
+            cancel=null;
+        }).catch()
     })
 }

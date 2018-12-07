@@ -15,3 +15,4 @@ export const reqNewProducts =()=>ajax(`/newproducts`);
 export const reqTopicHomes =()=>ajax(`/topichomes`);
 export const reqShiWuInit =()=>ajax(BASE+`/topic/v1/find/recManual.json`,{onlyOne:true});
 export const reqShiWuList =(id,page)=>ajax(BASE+`/topic/v1/find/getTabData.json?page=${page}&size=5&tabId=${id}`,{onlyOne:true});
+export const reqShiWuTabs =()=>ajax(BASE+`/topic/v1/find/getTabs.json`);
