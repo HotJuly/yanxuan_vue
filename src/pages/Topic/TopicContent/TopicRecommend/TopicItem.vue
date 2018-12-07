@@ -17,7 +17,7 @@
             </div>
             <div class="title">{{topic.title}}</div>
             <div class="pic">
-                <img src="./images/test.jpg"/>
+                <img :src="topic.picUrl"/>
             </div>
             <div class="rcount">
                 <i class="icon"></i>
@@ -54,9 +54,6 @@ export default {
     props:{
         topic:Object,
         ad:Object
-    },
-    mounted(){
-        console.log(this.topic,this.ad)
     }
     
 }
@@ -177,13 +174,16 @@ export default {
         }
         .title{
             width: 100%;
-            font-size: 0.36rem;
+            font-size: .36rem;
             color: #333;
-            line-height: 0.44rem;
+            line-height: .44rem;
             overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
             text-overflow: ellipsis;
-            padding-top: 0.32rem;
-            font-family: PingFangSC-Regular;
+            padding-top: .32rem;
+            font-family: PingFangSC-Regular
         }
         .desc{
             width: 100%;

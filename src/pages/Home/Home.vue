@@ -1,5 +1,5 @@
 <template>
-    <div ref="scroll"  @touchmove="handlemove">
+    <div ref="scroll">
         <div class="HomeHeader">
             <header>
                 <a href="/home" id="logo"></a>
@@ -295,7 +295,7 @@ export default {
     },
     methods:{
         handlemove(event){
-            if(document.documentElement.scrollTop>200){
+            if(scrollY>200){
                 this.goTop=true;
             }else{
                 this.goTop=false;
@@ -304,7 +304,6 @@ export default {
         handleGoTop(){
             this.goTop=false;
             requestAnimationFrame(function fn(){
-                const scrollY=document.documentElement.scrollTop;
                 if(scrollY!=0){
                     document.documentElement.scrollTop-=30;
                     requestAnimationFrame(fn);
@@ -317,6 +316,7 @@ export default {
       click: true,
       scrollX: true
     });
+    window.addEventListener('scroll',this.handlemove)
     
     this.$store.dispatch('getFocusList',()=>{
         this.$nextTick(()=>{

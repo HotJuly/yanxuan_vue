@@ -10,3 +10,5 @@ export const reqPolicyDescList =()=>ajax(`/policyDescList`);
 export const reqCategory =()=>ajax(`/category`);
 export const reqCategoryList =()=>ajax(`/categoryList`);
 export const reqShiWu =()=>ajax(`/shiwu`);
+export const reqNewProducts =()=>ajax(`/newproducts`);
+export const reqTopicHomes =()=>ajax(`/topichomes`);

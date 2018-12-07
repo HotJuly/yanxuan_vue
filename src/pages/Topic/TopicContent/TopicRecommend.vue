@@ -31,7 +31,6 @@ export default {
     computed:{
         ...mapState(['shiwu']),
         info(){
-            console.log(this.shiwu[this.curIndex])
             return this.shiwu[this.curIndex];
         }
     },

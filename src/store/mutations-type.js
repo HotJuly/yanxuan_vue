@@ -6,3 +6,5 @@ export const SETPOLICYDESCLIST='setPolicyDescList';
 export const SETCATEGORY='setCategory';
 export const SETCATEGORYLIST='setCategoryList';
 export const SETSHIWU='setShiWu';
+export const SETNEWPRODUCTS='setNewProducts';
+export const SETTOPICHOMES='setTopicHomes';
