@@ -1,27 +1,20 @@
 <template>
-    <div class="list" ref="list">
-        <!-- <pull-to @infinite-scroll="loadmore" v-if="shiwu.length>0">
-            <TopicItem :ad="info.ad" v-if="info.ad"/>
-            <TopicItem v-for="(topic,index) in info.topics" :key="index" :topic="topic"/>
-        </pull-to> -->
+    <div class="list">
         <div v-if="shiwu.length>0">
             <TopicItem :ad="info.ad" v-if="info.ad"/>
             <TopicItem v-for="(topic,index) in info.topics" :key="index" :topic="topic"/>
         </div>
-        <div></div>
     </div>
 </template>
 
 <script>
 import BScroll from 'better-scroll';
-import PullTo from 'vue-pull-to';
 import {mapState} from 'vuex';
 import TopicItem from './TopicRecommend/TopicItem';
 export default {
     data(){
         return {
-            curIndex:0,
-            shiwuList:[]
+            curIndex:0
         }
     },
     methods:{
@@ -34,43 +27,25 @@ export default {
                 this.curIndex=1;
             }
         },
-        loadmore(){
-            this.$store.dispatch('getShiWuMore');
-        }
     },
     computed:{
         ...mapState(['shiwu']),
         info(){
-            console.log('+++')
-            this.shiwuList=this.shiwu;
             return this.shiwu[this.curIndex];
-        }
-    },
-    watch:{
-        shiwu(){
-            if(this.bscroll){
-                this.bscroll.refresh();
-            }
         }
     },
     mounted(){
         this.setcurIndex();
         this.$store.dispatch('getShiWu',()=>{
             this.$nextTick(()=>{
-                this.bscroll=new BScroll('.list',{
+                new BScroll('.list',{
                     click:true
-                })
-                this.bscroll.on('scrollEnd',()=>{
-                    if(this.bscroll.y===this.bscroll.maxScrollY){
-                        this.$store.dispatch('getShiWuMore');
-                    }
                 })
             })
         });
     },
     components:{
-        TopicItem,
-        PullTo
+        TopicItem
     }
 }
 </script>

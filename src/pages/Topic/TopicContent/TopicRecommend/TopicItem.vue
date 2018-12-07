@@ -21,7 +21,7 @@
             </div>
             <div class="rcount">
                 <i class="icon"></i>
-                <span>93.7k人看过</span>
+                <span>{{(topic.readCount/1000).toFixed(1)}}k人看过</span>
             </div>
         </a>
     </div>
@@ -37,12 +37,14 @@
                     </div>
                     <div class="title">{{topic.title}}</div>
                     <div class="desc">{{topic.subTitle}}</div>
-                    <div class="rcount"><i class="icon"></i><span>{{topic.readCount/1000}}k人看过</span>
+                    <div class="rcount">
+                        <i class="icon"></i>
+                        <span>{{(topic.readCount/1000).toFixed(1)}}k人看过</span>
                     </div>
                 </div>
             </div>
-            <div class="pic">
-                <img :src="topic.picUrl" alt="" width="100%" height="100%">
+            <div class="pic" :style="`background:url(${topic.picUrl});background-size:auto 100%;background-position-x:50%`">
+                <!-- <img :src="topic.picUrl" alt="" width="100%" height="100%"> -->
             </div>
         </a>
     </div>
@@ -224,9 +226,11 @@ export default {
         position: relative;
         overflow: hidden;
         border-radius: 0.08rem;
-        background: #f0f0f0;
+        // background: #f0f0f0;
+        background-size auto 100%
         img{
-            width 100%
+            display inline-block
+            // width 100%
             height 100%
         }
     }

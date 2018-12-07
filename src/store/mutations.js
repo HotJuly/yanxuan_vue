@@ -1,5 +1,5 @@
 
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES} from './mutations-type';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE} from './mutations-type';
 
 export default {
     [SETTOPICLIST](state,{topicList}){
@@ -28,6 +28,9 @@ export default {
     },
     [SETSHIWU](state,{shiwu}){
         state.shiwu=shiwu;
+    },
+    [SETSHIWUMORE](state,{shiwu}){
+        state.shiwu[0].topics=state.shiwu[0].topics.concat(...shiwu);
     },
     [SETNEWPRODUCTS](state,{newProducts}){
         state.newProducts=newProducts;

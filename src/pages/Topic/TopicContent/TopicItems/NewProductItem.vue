@@ -1,17 +1,17 @@
 <template>
     <div class="m-tpls m-tpls-new">
-        <a :href="product.schemeUrl">
-            <div class="title">{{product.title}}</div>
-            <div class="content">{{product.subTitle}}</div>
+        <a :href="card.schemeUrl">
+            <div class="title">{{card.title}}</div>
+            <div class="content">{{card.subTitle}}</div>
         </a>
         <ul class="m-gplist">
-            <li v-for="item in product.itemList" :key="item.itemId">
+            <li v-for="item in card.itemList" :key="item.itemId">
                 <img :src="item.itemUrl" alt="" width="100%" height="100%">
             </li>
         </ul>
         <div class="u-rcount">
             <i class="ico"></i>
-            <span>{{(product.readCount/1000).toFixed(1)}}k人看过</span>
+            <span>{{(card.readCount/1000).toFixed(1)}}k人看过</span>
         </div>
     </div>
 </template>
@@ -19,7 +19,7 @@
 <script>
 export default {
   props: {
-    product: Object
+    card: Object
   }
 };
 </script>

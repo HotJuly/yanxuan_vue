@@ -1,5 +1,5 @@
-import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWu,reqNewProducts,reqTopicHomes} from '../api';
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES} from './mutations-type';
+import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWu,reqNewProducts,reqTopicHomes,reqShiWuMore} from '../api';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE} from './mutations-type';
 export default {
     async getFocusList({commit},cb){
         const result = await reqFocusList();
@@ -44,6 +44,17 @@ export default {
         if(!result.code){
             commit(SETSHIWU,{shiwu:result.data});
             typeof cb=="function"&&cb();
+        }
+    },
+    async getShiWuMore({commit}){
+        const result = await reqShiWuMore();
+        console.log(result)
+        if(result.code){
+            let resultArr=result.data.result;
+            let shiwu=resultArr.map((obj)=>{
+                return obj.topics
+            })
+            commit(SETSHIWUMORE,{shiwu});
         }
     },
     async getNewProducts({commit},cb){
