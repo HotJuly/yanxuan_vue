@@ -4,9 +4,6 @@ export default {
     tagList:[],
     policyDescList:[],
     category:[],
-    shiwu:[],
-    newProducts:[],
-    topicHomes:[],
     ShiWuList:[],
     ShiWuTabs:[]
 }

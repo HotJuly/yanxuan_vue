@@ -1,5 +1,5 @@
-import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWu,reqNewProducts,reqTopicHomes,reqShiWuMore,reqShiWuList,reqShiWuInit,reqShiWuTabs} from '../api';
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS} from './mutations-type';
+import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWuMore,reqShiWuList,reqShiWuInit,reqShiWuTabs} from '../api';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS} from './mutations-type';
 export default {
     async getFocusList({commit},cb){
         const result = await reqFocusList();
@@ -37,27 +37,6 @@ export default {
         const result = await reqCategoryList();
         if(!result.code){
             commit(SETCATEGORYLIST,{categoryList:result.data});
-        }
-    },
-    async getShiWu({commit},cb){
-        const result = await reqShiWu();
-        if(!result.code){
-            commit(SETSHIWU,{shiwu:result.data});
-            typeof cb=="function"&&cb();
-        }
-    },
-    async getNewProducts({commit},cb){
-        const result = await reqNewProducts();
-        if(!result.code){
-            commit(SETNEWPRODUCTS,{newProducts:result.data});
-            typeof cb=="function"&&cb();
-        }
-    },
-    async getTopicHomes({commit},cb){
-        const result = await reqTopicHomes();
-        if(!result.code){
-            commit(SETTOPICHOMES,{topicHomes:result.data});
-            typeof cb=="function"&&cb();
         }
     },
 

@@ -19,7 +19,7 @@ export default [
                 component:TopicList,
                 props:(route)=>({id:route.params.id*1})
             },
-            {path:"",redirect:'/topic/0'},
+            {path:"",redirect:'/topic/9'},
         ]
     },
     {path:"/shopcart",component:ShopCart},

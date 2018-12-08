@@ -1,5 +1,5 @@
 
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWU,SETNEWPRODUCTS,SETTOPICHOMES,SETSHIWUMORE,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS} from './mutations-type';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS} from './mutations-type';
 
 export default {
     [SETTOPICLIST](state,{topicList}){
@@ -25,18 +25,6 @@ export default {
     },
     [SETCATEGORYLIST](state,{categoryList}){
         state.categoryList=categoryList;
-    },
-    [SETSHIWU](state,{shiwu}){
-        state.shiwu=shiwu;
-    },
-    [SETSHIWUMORE](state,{shiwu}){
-        state.shiwu[0].topics=state.shiwu[0].topics.concat(...shiwu);
-    },
-    [SETNEWPRODUCTS](state,{newProducts}){
-        state.newProducts=newProducts;
-    },
-    [SETTOPICHOMES](state,{topicHomes}){
-        state.topicHomes=topicHomes;
     },
 
     //将识物的栏目数据放到ShiWuTabs中
