@@ -1,4 +1,5 @@
 import axios from "axios";
+import qs from 'querystring';
 const CancelToken = axios.CancelToken;
 let cancel;
 
@@ -15,23 +16,36 @@ export default function ajax(url,data={},method="GET"){
         }
         if(method=="GET"){
             if(JSON.stringify(data) != "{}"){
-                let str="";
-                Object.keys(data).forEach((key)=>{
-                    str+=`${key}=${data[key]}&`
-                })
-                url+="?"+str.substring(0,str.length-1);
+                // let str="";
+                // Object.keys(data).forEach((key)=>{
+                //     str+=`${key}=${data[key]}&`
+                // })
+                // url+="?"+str.substring(0,str.length-1);
+                if(onlyOne){
+                    promise = axios.get(url,{
+                        params:data,
+                        cancelToken:new CancelToken(function(c){
+                            cancel=c;
+                        })
+                    });
+                }else{
+                    promise = axios.get(url,{params:data});
+                }
             }
-            if(onlyOne){
-                promise = axios.get(url,{
-                    cancelToken:new CancelToken(function(c){
-                        cancel=c;
-                    })
-              });
-            }else{
+            else{
                 promise = axios.get(url);
             }
         }else{
-            promise=axios.post(url,data)
+            if(method=="POST"){
+                promise=axios.post(url,data)
+            }else if(method=="POSTFORM"){
+                promise=axios.post({
+                    url,
+                    data:qs.stringify(data),
+                    headers: { 'content-type': 'application/x-www-form-urlencoded' },
+                    method: 'POST',
+                })
+            }
         }
         promise.then((response)=>{
             resolve(response.data)

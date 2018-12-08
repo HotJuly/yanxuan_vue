@@ -15,10 +15,6 @@
             <div class="scroll">
                 <div class="flexbox">
                     <router-link :to="`/topic/${tab.tabId}`" class="item" v-for="tab in ShiWuTabs" :key="tab.tabId">{{tab.tabName}}</router-link>
-                    <!-- <router-link to="/topic/1" class="item">达人</router-link>
-                    <router-link to="/topic/2" class="item">上新</router-link>
-                    <router-link to="/topic/3" class="item">晒单</router-link>
-                    <router-link to="/topic/4" class="item">HOME</router-link> -->
                 </div>
             </div>
         </header>
