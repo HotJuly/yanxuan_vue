@@ -1,5 +1,5 @@
 
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS} from './mutations-type';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS,SETSEARCHRESULT,RESETSEARCHRESULT,SETSEARCHGOODS,SETSEARCHINITLIST} from './mutations-type';
 
 export default {
     [SETTOPICLIST](state,{topicList}){
@@ -66,7 +66,29 @@ export default {
             state.ShiWuList=state.ShiWuList.concat(data);
         }
     },
+
+    //切换topic页面时,清空ShiWuList
     [RESETSHIWULIST](state){
         state.ShiWuList=[];
+    },
+
+    //模糊查询,将获取的数据放入searchResult中
+    [SETSEARCHRESULT](state,{searchResult}){
+        state.searchResult=searchResult;
+    },
+
+    //模糊查询,将获取的数据放入searchResult中
+    [RESETSEARCHRESULT](state){
+        state.searchResult=[];
+    },
+
+    //商品查询,将获取的数据放入searchGoods中
+    [SETSEARCHGOODS](state,{searchGoods}){
+        state.searchGoods=searchGoods;
+    },
+
+    //查询页面的首屏信息,将获取的数据放入searchInitList中
+    [SETSEARCHINITLIST](state,{searchInitList}){
+        state.searchInitList=searchInitList;
     },
 }

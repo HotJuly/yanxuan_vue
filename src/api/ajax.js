@@ -39,7 +39,7 @@ export default function ajax(url,data={},method="GET"){
             if(method=="POST"){
                 promise=axios.post(url,data)
             }else if(method=="POSTFORM"){
-                promise=axios.post({
+                promise=axios({
                     url,
                     data:qs.stringify(data),
                     headers: { 'content-type': 'application/x-www-form-urlencoded' },

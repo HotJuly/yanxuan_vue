@@ -1,5 +1,5 @@
-import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWuMore,reqShiWuList,reqShiWuInit,reqShiWuTabs} from '../api';
-import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS} from './mutations-type';
+import {reqTopicList,reqFocusList,reqCateList,reqTagList,reqPolicyDescList,reqCategory,reqCategoryList,reqShiWuMore,reqShiWuList,reqShiWuInit,reqShiWuTabs,reqSearchResult,reqSearchGoods,reqSearchInit} from '../api';
+import {SETTOPICLIST,SETFOCUSLIST,SETCATELIST,SETTAGLIST,SETPOLICYDESCLIST,SETCATEGORY,SETCATEGORYLIST,SETSHIWUINIT,SETSHIWULIST,RESETSHIWULIST,SETSHIWUTABS,SETSEARCHRESULT,RESETSEARCHRESULT,SETSEARCHGOODS,SETSEARCHINITLIST} from './mutations-type';
 export default {
     async getFocusList({commit},cb){
         const result = await reqFocusList();
@@ -74,6 +74,37 @@ export default {
         if(result.code==200){
             commit(SETSHIWUTABS,{ShiWuTabs:result.data});
             typeof cb=="function"&&cb();
+        }
+    },
+
+    //获取设置searchResult数组
+    async getSearchResult({commit},{keywordPrefix,cb}){
+        const result = await reqSearchResult(keywordPrefix);
+        if(result.code==200){
+            commit(SETSEARCHRESULT,{searchResult:result.data});
+            typeof cb=="function"&&cb();
+        }
+    },
+
+    //清空设置searchResult数组
+    async resetSearchResult({commit}){
+        commit(RESETSEARCHRESULT);
+    },
+
+    //清空设置searchGoods数组
+    async getSearchGoods({commit},{keyword,cb}){
+        const result = await reqSearchGoods(keyword);
+        if(result.code==200){
+            commit(SETSEARCHGOODS,{searchGoods:result.data.directlyList});
+            typeof cb=="function"&&cb();
+        }
+    },
+
+    //清空设置searchGoods数组
+    async getSearchInit({commit}){
+        const result = await reqSearchInit();
+        if(result.code==200){
+            commit(SETSEARCHINITLIST,{searchInitList:result.data});
         }
     },
 }

@@ -5,5 +5,8 @@ export default {
     policyDescList:[],
     category:[],
     ShiWuList:[],
-    ShiWuTabs:[]
+    ShiWuTabs:[],
+    searchResult:[],
+    searchGoods:[],
+    searchInitList:{}
 }

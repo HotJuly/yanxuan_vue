@@ -6,6 +6,7 @@ const ShopCart = () => import('../pages/ShopCart/ShopCart.vue');
 const Login = () => import('../pages/Login/Login.vue');
 const NotFound = () => import('../pages/NotFound.vue');
 const TopicList = () => import('../pages/Topic/TopicContent/TopicList.vue');
+const Search = () => import('../pages/Search/Search.vue');
 
 export default [
     {path:"/home",component:Home},
@@ -24,6 +25,7 @@ export default [
     },
     {path:"/shopcart",component:ShopCart},
     {path:"/login",component:Login},
+    {path:"/search",component:Search},
     {path:"/",redirect:"/home"},
     {path:"/*",component:NotFound}
 ]

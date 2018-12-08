@@ -3,7 +3,7 @@
         <div class="HomeHeader">
             <header>
                 <a href="/home" id="logo"></a>
-                <div class="topSearchIpt">
+                <div class="topSearchIpt" @click="$router.replace('/search')">
                     <i class="icon"></i>
                     <span class="placeholder">搜索商品, 共19918款好物</span>
                 </div>

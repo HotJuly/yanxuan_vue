@@ -12,9 +12,9 @@
             </span>
             <span>分类</span>
             </span>
-        <span href="javascript:;" class="guide_item" :class="{on:$route.path==='/topic'}" @click="handleC('/topic')">
+        <span href="javascript:;" class="guide_item" :class="{on:$route.path.includes('/topic')}" @click="handleC('/topic')">
             <span class="item_icon">
-                <i class="icon icon_topic" :class="{on:$route.path==='/topic'}"></i>
+                <i class="icon icon_topic" :class="{on:$route.path.includes('/topic')}"></i>
             </span>
             <span>识物</span>
         </span>

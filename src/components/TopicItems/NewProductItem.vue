@@ -5,7 +5,7 @@
             <div class="content">{{card.subTitle}}</div>
         </a>
         <ul class="m-gplist">
-            <li v-for="item in card.itemList" :key="item.itemId">
+            <li v-for="item in card.itemList" :key="item.itemId" v-if="item!==null">
                 <img :src="item.itemUrl" alt="" width="100%" height="100%">
             </li>
         </ul>

@@ -1,7 +1,7 @@
 <template>
     <div class="classify">
         <header>
-            <div class="topSearchIpt">
+            <div class="topSearchIpt" @click="$router.replace('/search')">
                 <i class="icon"></i>
                 <span class="placeholder">搜索商品, 共19972款好物</span>
             </div>

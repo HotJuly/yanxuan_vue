@@ -10,3 +10,7 @@ export const SETSHIWUINIT='setShiWuInit';
 export const SETSHIWULIST='setShiWuList';
 export const RESETSHIWULIST='resetShiWuList';
 export const SETSHIWUTABS='setShiWuTabs';
+export const SETSEARCHRESULT='setSearchResult';
+export const RESETSEARCHRESULT='resetSearchresult';
+export const SETSEARCHINITLIST='setSearchInitList';
+export const SETSEARCHGOODS='setSearchGoods';
